@@ -1,0 +1,294 @@
+'''
+# Q.1
+
+a=int(input('Enter a Number : '))
+
+if(a%2==0):
+ print('Number is Odd')
+else:
+ print('Number is Even')
+
+
+
+# Q.2
+
+b=int(input('Enter a Number : '))
+c=int(input('Enter a Number : '))
+d=int(input('Enter a Number : '))
+
+if(b>c and b>d):
+ print('b is largest')
+elif(c>b and c>d):
+ print('c is largest')
+else:
+ print('d is largest')
+
+
+
+# Q.3
+
+year=int(input('Enter a Year : '))
+
+if(year%4==0 and year%100!=0 or year%400==0):
+ print(f'{year} is a leap year')
+else:
+ print('It is not a leap year')
+
+
+
+
+# Q.4
+
+grade=int(input('Enter the percentage : '))
+
+if(grade>=90):
+ print('Grade A')
+elif(grade>=80):
+ print('Grade B')
+elif(grade>=70):
+ print('Grade C')
+elif(grade>=60):
+ print('Grade D')
+else:
+ print('Grade F')
+
+
+
+# Q.5
+
+char=input('Enter a letter : ')
+
+if(char=='a' or char=='e' or char=='i' or char=='o' or char=='u'):
+ print('The given letter is a vowel')
+else:
+ print('The given letter is a consonant')
+
+
+
+
+# Q.6
+
+num1 = float(input("Enter the first number: "))
+operator = input("Enter an operator (+, -, *, /): ")
+num2 = float(input("Enter the second number: "))
+
+if operator == '+':
+    result = num1 + num2
+elif operator == '-':
+    result = num1 - num2
+elif operator == '*':
+    result = num1 * num2
+elif operator == '/':
+    if num2 != 0:
+        result = num1 / num2
+    else:
+        result = "Error! Division by zero."
+else:
+    result = "Invalid operator!"
+
+print("Result:", result)
+
+
+
+# Q.7
+
+username='admin'
+password1=1234
+
+char=input('Enter username : ')
+password=int(input('Enter password : '))
+
+if(char==username and password1==password):
+ print('Login Successful')
+else:
+ print('Login Failed')
+
+
+# Q.8
+
+num=int(input('Enter a number : '))
+
+if(num<0):
+ print('Negative')
+elif(num>0):
+ print('Positive')
+else:
+ print('Zero')
+
+
+
+# Q.9
+
+
+a=int(input('Enter 1st side of triangle : '))
+b=int(input('Enter 2nd side of triangle : '))
+c=int(input('Enter 3rd side of triangle : '))
+
+if(a+b>c and b+c>a and a+c>b):
+ print('Valid Triangle')
+else:
+ print('Invalid Triangle')
+
+
+
+
+# Q.10
+
+weight=float(input('Enter your Weight : '))
+height=float(input('Enter your Height in meters : '))
+
+BMI=weight/(height**2)
+
+if(BMI<18.5):
+ print('Underweight')
+elif(18.5<=BMI<24.9):
+ print('Normal Weight')
+elif(25<=BMI<29.9):
+ print('Overweight')
+else:
+ print('Obese')
+
+
+
+# Q.11
+
+price=float(input('Enter the Product price : '))
+
+
+if(price>1000):
+ discount=0.10
+elif(500<=price<=1000):
+ discount=0.05
+else:
+ discount=0.0
+ 
+final_price=price-(price*discount)
+print(f'Final price after discount : {final_price:.2f}')
+
+
+
+# Q.12
+
+month=input('Enter the name of the Month : ')
+year=int(input('Enter the year : '))
+
+if(month=='Janaury' or month=='March' or month=='May' or month=='July' or month=='August' or month=='October' or month=='December'):
+ print('31 days')
+
+elif(month=='April' or month=='June' or month=='September' or month=='November'):
+ print('30 days')
+
+elif(month=='February'):
+ if(year%4==0 and year%100!=0 or year%400==0):
+  print('29 days')
+ else:
+  print('28 days')
+
+else:
+ print('Invalid response')
+
+
+
+
+
+# Q.13
+
+
+balance=int(input('Enter the amount you have in your balance : '))
+
+print('1.Check Balance\n2.Deposit Money\n3.Withdraw Money')
+
+choice=int(input('Enter your Choice(1-3) : '))
+
+if(choice==1):
+ print('Your balance is',balance)
+
+elif(choice==2):
+ deposit=float(input('Enter the amount to be deposited : '))
+ balance +=deposit
+ print('The amount is deposited successfully. New amount is',balance)
+
+elif(choice==3):
+ withdraw=float(input('Enter the amount to be withdrawn : '))
+ if(withdraw<=balance):
+  balance -= withdraw
+  print('Withdrawl successful. New balance is : ',balance)
+ else:
+  print('Insufficient balance.')
+
+else:
+ print('Invalid choice')
+
+
+
+
+
+# Q.14
+
+age=int(input('\nEnter your Age : '))
+
+if(0<=age<=1):
+ print('\nInfant')
+elif(2<=age<=4):
+ print('\nToddler')
+elif(5<=age<=12):
+ print('\nChild')
+elif(13<=age<=19):
+ print('\nTeenager')
+elif(20<=age<=59):
+ print('\nAdult')
+else:
+ print('\nSenior')
+
+
+'''
+
+
+# Q.15
+
+weekday=int(input('\nEnter the number : '))
+
+
+if(weekday==1):
+ print('\nMonday')
+elif(weekday==2):
+ print('\nTuesday')
+elif(weekday==3):
+ print('\nWednesday')
+elif(weekday==4):
+ print('\nThursday')
+elif(weekday==5):
+ print('\nFriday')
+elif(weekday==6):
+ print('\nSaturday')
+elif(weekday==7):
+ print('\nSunday')
+else:
+ print('\nInvalid response')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
