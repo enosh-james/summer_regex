@@ -360,7 +360,7 @@ for i in range(1,5):
   print(j,end='')
  print('')
 
-'''
+
 
 def pattern(n):
  for i in range(1,n):
@@ -388,6 +388,120 @@ x()
 
 
 first class functions vs high order functions
+
+
+'''
+
+
+
+16.05.2025
+
+# LAMBDA FUNCTION
+# one line function
+# anonymous function
+# they don't have a name
+
+y= lambda num: num+5
+y(10)
+
+
+# MAP FUNCTION
+# It applies on each and every element and return a value
+# one element is loaded in the memory and processed at a time
+
+list(map(len,['hey','hello']))
+tuple(map(len,['enosh','james']))
+
+list(map(lambda x : x*x,[10,20,30,40,50]))
+list(filter(lambda x : x%2==0,[10,20,30,40,50]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
