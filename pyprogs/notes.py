@@ -98,6 +98,10 @@ for i in range(1,4):
   print('Good morning',j)
 
 
+-----------------------------------------------------------------------------------
+
+
+
 14.05.2025
 
 mylist=[50,1,10,40,2,4,12,8,24,7]
@@ -246,7 +250,7 @@ for i in range(1,5):
 
 
 
-
+-----------------------------------------------------------------------------------
 
 15.05.2025
 
@@ -390,7 +394,7 @@ x()
 first class functions vs high order functions
 
 
-'''
+-----------------------------------------------------------------------------------
 
 
 
@@ -416,90 +420,389 @@ list(map(lambda x : x*x,[10,20,30,40,50]))
 list(filter(lambda x : x%2==0,[10,20,30,40,50]))
 
 
+-----------------------------------------------------------------------------------
 
 
+17.05.2025
 
+# OOPS IN PYTHON
 
+class HouseDesign:
+ color='yellow'
 
+#object=class()
+h1=HouseDesign()
+print(h1.color)
 
 
+h2=HouseDesign()
+h2.color='White'
+print(h2.color)
 
 
+class HouseDesign:
+ def __init__(self):  #self => current object reference is stored 
+  print('Worker has arrived')
 
 
+h1.HouseDesign()
 
 
 
+class HouseDesign:
+ def __init__(self,x):
+  self.color=x         #h1.color=green
 
 
+h1=HouseDesign('Green')
+print('h1 : ',h1.color)
 
+h2=HouseDesign('Red')
+print('h2 : ',h2.color)
 
 
+# INHERITANCE => Parent class => child class
+# this makes code reusable
 
+class Parent:
+ amount=5000
 
+class child(Parent):
+ salary=10000
 
+c1=child()
+print(c1.amount)
 
 
 
 
+class Driver:
+ def __init__(self,name,id,email):
+  self.name=name
+  self.id=id
+  self.email=email
 
+x1=Driver('Enosh','048','jamesenosh@gmail.com')
+x2=Driver('Hardik','054','hardik@gmail.com')
 
+print('Name : ',x1.name, '\nID : ',x1.id, '\nEmail : ',x1.email)
+print('Name : ',x2.name, '\nID : ',x2.id, '\nEmail : ',x2.email)
 
 
 
 
+class customer:
+ def __init__(self,id,name,email,wallet):
+  self.id=id
+  self.name=name
+  self.email=email
+  self.wallet=wallet
 
+a1=customer('01','Enosh','enosh@gmail.com','10000')
+a2=customer('02','Hardik','hardik@gmail.com','20000')
 
+print('ID : ',a1.id, '\nName : ',a1.name, '\nEmail : ',a1.email, '\nWallet : ',a1.wallet)
 
 
 
 
 
+class customer(Driver): #using inheritance here
+ def __init__(self,id,name,email):
+  super().__init__(id,name,email)
+ 
 
+a1=customer('01','Enosh','enosh@gmail.com')
+print('ID : ',a1.id, '\nName : ',a1.name, '\nEmail : ',a1.email)
 
 
+class Employee:
+ def __init__(self,a,b,c,d):
+  self.id=a
+  self.name=b
+  self.email=c
+  self.salary=d
 
+ def info(self):
+  print(self.salary//12, self.email.split('@')[-1])
 
 
+a1=Employee('01','Enosh','enosh@gmail.com','800000')
 
+print('ID : ',a1.id, '\nName : ',a1.name, '\nDomain : ',a1., '\nMonthly Salary : ',a1.)
 
 
+----------------------------------------------------------------------------------------------------------
 
 
+19.05.2025
 
 
+# DATA SCIENCE
+# Problem => Data acquire => Data pre-process => data storage
+# Data preparation => Data analysis => Data visualize
+# ML and Algorithmn ( Chatbot, Open AI service, Open cv, NLP) => Data report
 
+# Python => libraries => Pandas and numpy
+# Numpy => numerical python
+# Scientific library => data in form of nd array
+# [  1,2,3,4,  ]
+#   [1,2],'
+#   [3,4]
+# Data prepare in form of number
 
+import numpy
+numpy.arrange(7)
+type(numpy.arrange(7))
 
+import numpy as np
+arr1=np.arange(5)
+arr1
 
+np.ndarray(3)
 
+arr1=np.array([1,2,3])
+arr1.size
 
+arr1=np.array([ [1,2],[3,4],[5,6] ])
+print(arr1.size)
+print(arr1.shape)
+print(arr1.dtype)
 
+arr2=np.arange(3)
+print(arr2.shape)
 
+np.ones([3,4])
 
+arr1=np.arange(9)
+arr1.reshape(3,3)
 
+import numpy as np
+a=np.array([ [1,2],[3,4] ])
+print(a)
+b=a.transpose()
+print(b)
 
 
+arr1=np.array([[[1.0,2],[2,3],[5,6]]])
+arr1.ndim
+arr2.shape
 
 
+# NUMPY
+# String => convert => int
 
 
+# pandas : powerful => data transform, clean, prepare
+# Series : 1D array
+# Dataframe : collection of series tabular format for your data 
 
+import pandas as pd
+pd.Series([10,2,34,4])
 
 
+import pandas as pd
+series1=pd.Series([10,2,34,4])
+series1.values
+series1.index
+print(series1[0])
+series1[0]=90      #update
+series[5]=1000
+series1
 
+series1.max()
+series1.idxmax()
 
+series1.max()
+print(series1.idxmin())
 
 
+import pandas as pd
+series1=pd.Series([10,2,34,4], index=['A','B','C','D']) #series with customize index
+series1.to_dict()
 
+arr1=np.array([10,13,15,19,24])
+series1=pd.Series(arr1)
+series1
+type(series1)
 
 
+arr1=np.array([10,13,15,19,24])
+series1=pd.Series(arr1)
+series1.value_counts()
 
 
+arr1=np.array([10,13,15,19,24])
+series1=pd.Series(arr1)
+series1.value_counts(ascending=True)  #ascending is false by default
 
 
 
+arr1=np.array([10,13,15,19,24])
+series1=pd.Series(arr1)
+series1.is_unique  #do we have unique value or not
 
+series1.nunique()  # total unoque element
+
+
+arr1=np.array([10,13,15,19,24,10,15])
+series1=pd.Series(arr1)
+series1.drop_duplicates()  # removes duplicate values but original values are not affected
+series1.drop_duplicates(inplace=True)  # removes duplicate values in the original series also
+
+
+
+
+
+arr1=np.array([10,13,15,19,24,10,15])
+series1=pd.Series(arr1)
+series1.values
+series1.index
+series1.max()
+series1.idxmax()
+series1.min()
+series1.idxmin()
+series1.value_counts()
+series1.value_counts(ascending=True)  
+series1.drop_duplicates()  
+series1.drop_duplicates(inplace=True)
+series1.is_unique()
+series1.nunique()
+series1.to_dict()
+
+
+data=[ [10,12],[13,14] ]
+pd.DataFrame(data)
+
+df=pd.DataFrame(data, columns=['Product1','Product2','Product3'])
+type(df['Product1'])
+
+
+import os
+import pandas as pd
+df=pd.read_csv('D:\\enosh_regex\\pyprogs\\ml-latest-small\\ratings.csv')
+print(df)
+
+
+
+--------------------------------------------------------------------------------------------
+
+
+
+20.05.2025
+
+# INTRODUTION TO PANDAS : is anopen sourcce library that is used to handle data manipulations.
+
+# 1.) Series
+# 2.) DataFrame
+
+
+# 1.) Series : It is an one dimensional array and it shows omly values not column name.
+
+a=pd.Series([1,233,67,90])
+print(a)
+type(a)
+
+
+# 2.) DataFrame : It is a multi dimensiona; array and it has values with column name.
+
+a={ 'Name' : ['Sam','Raj','Rahul','Gaurav'],
+    'Domain' : ['D.E','D.S','D.S','Full Stack'],
+    'Duration' : [30,15,45,30]
+  }
+
+df=pd.DataFrame(a)
+print(df)
+
+
+
+df=pd.read_csv("D:\\enosh_regex\\pyprogs\\netflix_titles.csv")
+print(df)
+
+
+df=pd.read_csv("D:\\enosh_regex\\pyprogs\\makemytrip.csv")
+print(df)
+
+-----------------------------------------------------------------------------------
+
+21.05.2025
+
+import pandas as pd 
+df=pd.read_csv('D:\\enosh_regex\\csv_file_work\\titanic.csv')
+print(df)
+
+print(df.tail())
+print(df.head())
+print(df.sample(3))
+print(df.shape)
+print(df.columns)
+
+print(df.loc[2:5, ['Survived','Pclass'] ])    #df.loc[low_ramge,column_name]
+print(df.iloc[ [] ])
+ 
+
+print(df.dtypes)
+print(df.isnull().sum())   #returns total missing data in each column.
+
+p=df.dropna()  #remove missing rows.
+print(p.isnull().sum())
+
+print(df.drop(columns=['Cabin']))
+print(df.sample(3))
+
+df['Fare']=df['Fare'].fillna(5)
+df['Age']=df['Age'].fillna(10)
+print(df.head())
+
+df['Fare']=df['Fare'].astype(int)
+print(df['Fare'].dtype)
+
+df['Survived'].value_counts()   
+
+df.rename(columns={'Age':'Updated_Age'})
+print(df.head(3))
+
+
+# DATA
+# 1.) Continous data => we can divide in more subdata eg dob,river_length
+# 2.) Discrete data => we cannot divide in more sub_data
+# Ex. Marital status, total_number_of _employees_in_a_company
+
+
+# Exploratory Data Analysis
+# 1.) Univariate Analysis : Analysis on a single column
+# 2.) Bivariate Analysis : Analysis on 2 columns
+# 3.) Multivariate Analysis : Analysis on more than 2 columns
+
+# Numerical : Histogram, line chart
+# Categorical : pie chart, bar chart, countplot.
+
+import matplotlib as 
+import seaborn as sns
+
+print(df.columns)
+
+print(sns.countplot(x=df['Survived']))
+
+df['Survived].value_counts().plot(kind='bar')
+df['Survived].value_counts().plot(kind='pie',autopct='%.2f')
+
+plt.hist(x=df['Updated_Age'])
+plt.show()
+
+sns.boxplot(x=df['Survived'])
+
+sns.scatterplot(x=df['total_bill'], y=df['tip'])
+sns.scatterplot(x='total_bill', y=df'tip', data=df, hue=df['sex'])
+
+sns.scatterplot(x='total_bill', y=df'tip', data=df, hue=df['sex'],style=df['smoker'])
+
+# Heatmap(Categorical-Categorical)
+p=pd.crosstab(df['Day'],df['time'])
+print(p)
+sns.heatmap(p)
+
+df.groupby('time').sum()['total_bill']
 
 
 
