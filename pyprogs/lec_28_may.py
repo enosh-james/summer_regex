@@ -160,7 +160,19 @@ df = pd.read_csv('D:\\enosh_regex\\Datasets\\social_network_ads.csv', usecols = 
 
 print(df.head())
 
+x = df.drop(columns = ['Purchased']) #Independent column
+y = df['Purchased']   #dependent column
 
+from sklearn.model_selection import train_test_split(x,y,test_size=0.2,random_state=23)
+
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.2, random_state=23)
+
+from sklearnpreprocessing import StandardScaler
+
+sc= StandardScaler()
+
+x_train_new = sc.fit_transform(x_train)
+x_test_new = sc.transform(x_test)
 
 
 

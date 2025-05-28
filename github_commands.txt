@@ -1,0 +1,3 @@
+git add .  # to check the new files
+git commit -m "Adding files"  # to see all files in the directory you are in
+git push  # all files will be uploaded in the github
