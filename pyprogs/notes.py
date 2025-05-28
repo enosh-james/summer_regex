@@ -804,17 +804,158 @@ sns.heatmap(p)
 
 df.groupby('time').sum()['total_bill']
 
+-----------------------------------------------------------------------------------
+
+22.05.2025
+
+# SUPPLY CHAIN PROJECT
+
+import numpy as np 
+import pandas as pd
+
+df=pd.read_csv('D:\\enosh_regex\\Datasets\\supply_chain.csv')
+
+
+#print(df.head())
+
+
+import plotly.express as px
+import plotly.io as pio
+import plotly.graph_objects as go
+pio.templates.default='plotly_white'
+
+
+df.describe()
+
+
+fig=px.scatter(df,x='Price', y='Revenue generated', color='Product type', hover_data=['Number of products sold'], trendline = 'ols')
+fig.show()
+
+
+sales_data=df.groupby('Product type')['Number of products sold'].sum().reset_index()
+
+pie_chart=px.pie(sales_data, values='Number of products sold', names='Product types', title='Sales by product type', hover_data=['Number of product sold'], hole=0.5, color_discrete_sequence = px.colors.qualitative.Pastel)
+
+pie_chart_update_traces(textposition='inside', textinfo='percent+label')
+pie_chart.show()
+
+
+total_revenue=df.groupby('Shipping carriers')['Revenue generated'].sum().reset_index()
+
+fig=go.Figure()
+
+fig.add_trace(go.bar(x=total_revenue['Shipping carriers'], y=total_revenue['Revenue generated']))
+
+fig.update_layout(titlt='Toatl Revenue by Shipping Carrier', xaxis_title='Shipping Carrier', yaxis_title='Revenue Generated')
+
+fig.show()
 
 
 
+avg_lead_time=df.groupby('Product type')['Lead time'].mean().reset.index
+
+avg_manufacturing_costs + df.groupby('Product type ')['Manufacturing costs'].mean().reset_index()
+
+result = pd.merge(avg_lead_time, avg_manufacturing_costs, on='Product type')
+
+result.rename(columns={'Lead time': 'Average Lead Time', 'Manufacturing costs' : 'Average Manufacturing Costs'}, inplace=True)
+
+print(result)
 
 
+revenue_chart=px.line(df, x='SKU', y='Revenue generated', title='Revenue generated ', by SKU)
+revenue_chart.show()
+
+stock_chart = px.bar(x='SKU', y='Stock levels', title='Stock Levels by SKU')
+order_quantity_chart.show()
+
+order_quantity_chart = px.bar(x='SKU', y='Order quantities', title='Order Quantity by SKU')
+order_quantity_chart.show()
+
+shipping_cost_chart=px.bar(df,x='Shipping carriers', y='Shipping costs', titlt='Shipping Costs by Carriers')
+shiping_cost_chart_.show()
+
+transportation_chart=px.pie(df, values='Costs', names='Transportation modes', title='Cost Distribution by Transportation Mode', hole=0.5, color_discrete_sequence=px.colors.qualitative.Pastel)
+transportation_chart.show()
+
+'''
 
 
+# LINKEDIN REVIEWS PROJECT
+
+import numpy as np 
+import pandas as pd
+
+df=pd.read_csv('D:\\enosh_regex\\Datasets\\linkedin-reviews.csv')
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+'''
+sns.set(style='whitegrid')
+plt.figure(figsize=(9,5))
+sns.countplot(data=df, x='Rating')
+plt.title('Distribution of Ratings')
+plt.xlabel('Rating')
+plt.ylabel('Count')
+plt.show()
+'''
+
+from textblob import TextBlob
+def textblob_sentiment_analysis(review):
+ sentiment=TextBlob(review).sentiment
+ if(sentiment.polarity>0.1):
+  return 'Positive'
+ elif(sentiment.polarity<0.1): 
+  return 'Negative'
+ else:
+  return 'Neutral'
+
+df['Sentiment']=df['Review'].apply(textblob_sentiment_analysis)
+df.sample(5)
+
+sentiment_distribution = df['Sentiment'].value_counts()
+sentiment_distribution
+
+--------------------------------------------------------------------------------------------------------------
+
+24.05.2025
 
 
+#Introduction to Machine Learning------>
+
+#Data ---> divide (Input, target) -----> trained by ML Model ----> ML Model data Prediction -----> 
+
+#Model Accuracy
+
+#Normal Distribution ---->
+-3 -2 -1 0 1 2 3
+
+#here 0 ---> Central tendancy(mean, median)
+#gap(Standard deviation) equal
+
+#Why we convert our data into Normal Distribution?
+#(1) Calculation Easy
+#(2) take less time for training and executing
+
+# ML -----> Feature Engineering (Create Appropriate data) + Solution
+
+#Feature Engineering
+
+#(1) Data Dividation
 
 
+import pandas as pd
+df=pd.read_csv('D:\\enosh_regex\\Datasets\\covid_toy.csv')
+
+df.head(3)
+
+
+s1=SimpleImputer() # it will fill missing values
+
+# if data
+# Numerical ---> fill data mean
+# Categorical ---> fill data most frequent values
 
 
 
