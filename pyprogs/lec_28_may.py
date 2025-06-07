@@ -175,6 +175,18 @@ x_train_new = sc.fit_transform(x_train)
 x_test_new = sc.transform(x_test)
 
 
+# from sklearn.naive_bayes import BurnolliNB
+from sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliiNB
+
+classifier = GaussianNB()
+
+classifier.fit(x_train_new, y_train)
+
+GaussianNB()
+
+y_pred = classifier.predict(x_test_new)
+
+print(y_pred)
 
 
 

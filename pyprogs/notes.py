@@ -957,6 +957,23 @@ s1=SimpleImputer() # it will fill missing values
 # Numerical ---> fill data mean
 # Categorical ---> fill data most frequent values
 
+df['fever'] = s1.fit_transform
+
+df['gender'].value_counts()  # it will return total_frequency
+
+df['cough']=df['cough'],map({'Mild':0})
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
